@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Arena - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet"> 
+    <style>
+        :root {
+            --primary-color: #375706;
+            --secondary-color: #4A6A1F;
+            --accent-color: #F8C537;
+            --light-color: #F5F5F5;
+            --dark-color: #333333;
+        }
+        body {
+            font-family: "Nunito Sans", sans-serif;
+            background: url("./images/background.jpeg");
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: var(--dark-color);
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+        }
+        
+        .login-container {
+            position: relative;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            width: 380px;
+            padding: 40px;
+            z-index: 1;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: var(--primary-color);
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo h1 {
+            color: white;
+            margin: 10px 0;
+            font-size: 28px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo img {
+            width: 120px;
+        }
+        
+        .sports-icons {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        
+        .sports-icons i {
+            font-size: 24px;
+            color: white;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 12px;
+            border-radius: 50%;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        
+        .input-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .input-group input {
+            width: 340px;
+            padding: 15px 20px;
+            border: none;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .input-group input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 0 0 3px rgba(104, 145, 42, 0.4);
+        }
+        
+        .input-group label {
+            color: #fff;
+            font-size: 15px;
+            border-radius: 4px;
+            margin-bottom: 14px;
+            display: inline-block;
+            font-weight: 500;  
+            }
+        
+        .input-group input:focus + label,
+        .input-group input:valid + label {
+            top: -10px;
+            left: 15px;
+            font-size: 12px;
+            background: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+        }
+        
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: white;
+        }
+        
+        .remember-forgot a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .remember-forgot a:hover {
+            text-decoration: underline;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(104, 145, 42, 0.4);
+        }
+        
+        .login-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(104, 145, 42, 0.6);
+        }
+        
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .signup-link a {
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+        
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+        }
+        
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .divider-text {
+            padding: 0 10px;
+            color: white;
+            font-size: 13px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: white;
+        }
+        
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        /* Custom checkbox */
+        .remember-forgot input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        
+        .remember-forgot input[type="checkbox"]:checked {
+            background: var(--primary-color);
+        }
+        
+        .remember-forgot input[type="checkbox"]:checked::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 12px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="login-container">
+        <div class="logo">
+            <img src="images/logo.png" alt="Sports Logo">
+            <h1>Sports Complex</h1>
+        </div>
+        
+        <div class="sports-icons">
+            <i class="fas fa-football-ball"></i>
+            <i class="fas fa-basketball-ball"></i>
+            <i class="fas fa-baseball-ball"></i>
+            <i class="fas fa-running"></i>
+        </div>
+        
+        <form>
+            <div class="input-group">
+                <label for="username">Username or Email</label>
+                <input type="text" id="username" placeholder="Enter Username" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter Password"  required>
+            </div>
+            
+            <div class="remember-forgot">
+                <div>
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <a href="#">Forgot Password</a>
+            </div>
+            
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+    </div>
+</body>
+</html>
