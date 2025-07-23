@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -34,7 +32,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="sports.html" class="nav-link active">
+                        <a href="sports.html" class="nav-link ">
                             <span class="nav-icon"><i class="fas fa-futbol"></i></span>
                             <span class="nav-text">Sports</span>
                         </a>
@@ -46,7 +44,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="clients.html" class="nav-link">
+                        <a href="clients.html" class="nav-link active  ">
                             <span class="nav-icon"><i class="fas fa-user-tie"></i></span>
                             <span class="nav-text">Clients</span>
                         </a>
@@ -86,24 +84,11 @@
             <div class="content-area">
                 <div class="page-header">
                     <div class="page-title">
-                        <i class="fas fa-futbol page-title-icon"></i>
-                        <h1>Sports</h1>
+                        <i class="fas fa-user-tie page-title-icon"></i>
+                        <h1>Clients</h1>
                     </div>
                     <div class="page-actions">
                         <div class="search-container">
-                            <div class="date-range-filter">
-                                <div class="date-input">
-                                    <label>From:</label>
-                                    <input type="date" class="date-input-field" id="fromDate">
-                                </div>
-                                <div class="date-input">
-                                    <label>To:</label>
-                                    <input type="date" class="date-input-field" id="toDate">
-                                </div>
-                                <button class="filter-btn" onclick="applyFilters()">
-                                    <i class="fas fa-filter"></i> Apply
-                                </button>
-                            </div>
                             <div class="search-bar">
                                 <i class="fas fa-search search-icon"></i>
                                 <input type="text" class="search-input" placeholder="Search sports...">
@@ -113,13 +98,13 @@
                                 Create
                             </button>
                             <!-- Modal -->
-                            <div id="createSportsModal" class="modal">
+                            <div id="createClientsModal" class="modal">
                                 <div class="modal-content">
                                     <!-- Modal Header -->
                                     <div class="modal-header">
                                         <div class="modal-title">
-                                            <i class="fas fa-football-ball"></i>
-                                            Create Sports
+                                            <i class="fas fa-calendar-alt"></i>
+                                            Create Booking
                                         </div>
                                         <button class="close-btn" onclick="closeModal()">
                                             <i class="fas fa-times"></i>
@@ -128,40 +113,38 @@
                     
                                     <!-- Modal Body -->
                                     <div class="modal-body">
-                                        <form id="createSportsForm">
-                                            <!-- Sports Name Field -->
-                                            <div class="form-group">
-                                                <label class="form-label" for="sportsName">Sports Name</label>
-                                                <input type="text" class="form-input" id="sportsName" name="sportsName"
-                                                    placeholder="Enter name" required>
-                                            </div>
-                    
-                                            <!-- Date Field -->
-                                            <div class="form-group">
-                                                <label class="form-label" for="date">Date</label>
-                                                <div class="input-wrapper">
-                                                    <input type="date" class="form-input date-input" id="date" name="date"
-                                                        placeholder="Enter date" required>
-                                                    <i class="fas fa-calendar-alt input-icon"></i>
-                                                </div>
-                                            </div>
-                    
-                                            <!-- Time Field -->
-                                            <div class="form-group">
-                                                <label class="form-label" for="time">Time</label>
-                                                <div class="input-wrapper">
-                                                    <input type="text" class="form-input time-input" id="time" name="time"
-                                                        placeholder="5.00 PM TO 6.00PM" required>
-                                                    <i class="fas fa-clock input-icon"></i>
-                                                </div>
-                                            </div>
-                    
-                                            <!-- Amount Field -->
-                                            <div class="form-group">
-                                                <label class="form-label" for="amount">Amount</label>
-                                                <input type="number" class="form-input" id="amount" name="amount" placeholder="Enter amount"
-                                                    required>
-                                            </div>
+                                        <form id="createClientsForm">
+                                            <!-- Name Field -->
+                                        <div class="form-group">
+                                            <label class="form-label" for="name">Name</label>
+                                            <input type="text" class="form-input" id="name" name="name" placeholder="Enter name" required>
+                                            <div class="error-message" id="nameError">Name is required</div>
+                                        </div>
+
+                                        <!-- Email Field -->
+                                        <div class="form-group">
+                                            <label class="form-label" for="email">Email</label>
+                                            <input type="email" class="form-input" id="email" name="email" placeholder="Enter email" required>
+                                            <div class="error-message" id="emailError">Please enter a valid email</div>
+                                        </div>
+
+                                        <!-- Contact Number Field -->
+                                        <div class="form-group">
+                                            <label class="form-label" for="contactNumber">Contact Number</label>
+                                            <input type="tel" class="form-input" id="contactNumber" name="contactNumber" placeholder="Enter contact number">
+                                            <div class="error-message" id="contactError">Please enter a valid contact number</div>
+                                        </div>
+
+                                        <!-- Role Field -->
+                                        <div class="form-group">
+                                            <label class="form-label" for="role">Gender</label>
+                                            <select class="form-select" id="role" name="role" required>
+                                                <option value="">Select Gender</option>
+                                                <option value="admin">Male</option>
+                                                <option value="admin">Female</option>
+                                            </select>
+                                            <div class="error-message" id="roleError">Please select a role</div>
+                                        </div>
                                         </form>
                                     </div>
                                     <!-- Modal Footer -->
@@ -180,23 +163,33 @@
                             <thead class="table-header">
                                 <tr>
                                     <th>S.no</th>
-                                    <th>Sports Name</th>
-                                    <th>Date</th>
-                                    <th>Timing</th>
-                                    <th>Amount</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Moblie Number</th>
+                                    <th>Gender</th>
+                                    <th>Transition History</th>
+                                    <th>Sports History</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <thead class="filter-row">
                                 <tr>
                                     <td></td>
-                                    <td><input type="text" class="filter-input" placeholder="Filter sports name..." data-filter="sports name">
+                                    <td><input type="text" class="filter-input" placeholder="Filter name..." data-filter="sports">
                                     </td>
-                                    <td><input type="text" class="filter-input" placeholder="Filter date..." data-filter="date">
+                                    <td><input type="text" class="filter-input" placeholder="Filter email..." data-filter="date">
                                     </td>
-                                    <td><input type="text" class="filter-input" placeholder="Filter timing..."
+                                    <td><input type="text" class="filter-input" placeholder="Filter moblie number..."
                                             data-filter="contact"></td>
-                                    <td><input type="text" class="filter-input" placeholder="Filter amount..." data-filter="amount"></td>
+                                    <td>
+                                        <select class="filter-input" data-filter="status">
+                                            <option value="">Select Gender</option>
+                                            <option value="Active">Male</option>
+                                            <option value="Inactive">Female</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" class="filter-input" placeholder="Filter transition history..." data-filter="transition-history"></td>
+                                    <td><input type="text" class="filter-input" placeholder="Filter sports history..." data-filter="sports-history"></td>
                                     <td></td>
                                 </tr>
                             </thead>
@@ -257,32 +250,31 @@
         });
     </script>
     <script>
-        // Modal functions
         function openModal() {
-            document.getElementById('createSportsModal').classList.add('active');
+            document.getElementById('createClientsModal').classList.add('active');
         }
 
         function closeModal() {
-            document.getElementById('createSportsModal').classList.remove('active');
-            document.getElementById('createSportsForm').reset();
+            document.getElementById('createClientsModal').classList.remove('active');
+            document.getElementById('createClientsForm').reset();
         }
 
-        function saveSports() {
-            const sportsName = document.getElementById('sportsName').value;
-            const date = document.getElementById('date').value;
-            const time = document.getElementById('time').value;
-            const amount = document.getElementById('amount').value;
+        function saveClient() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const contact = document.getElementById('contactNumber').value;
+            const gender = document.getElementById('gender').value;
             
-            if (sportsName && date && time && amount) {
-                alert('Sports created successfully!');
+            if (name && email && gender && contact) {
+                alert('Client saved successfully!');
                 closeModal();
             } else {
-                alert('Please fill all required fields');
+                alert('Please fill required fields');
             }
         }
 
         // Close on outside click
-        document.getElementById('createSportsModal').onclick = function(e) {
+        document.getElementById('createClientsModal').onclick = function(e) {
             if (e.target === this) closeModal();
         }
     </script>

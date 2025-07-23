@@ -356,7 +356,6 @@
 .sidebar.collapsed .logo img {
     width: 50px;
 }
-
 /* Show full logo when collapsed sidebar is hovered */
 .sidebar.collapsed:hover .logo img {
     width: 100px;
@@ -378,6 +377,7 @@
 }
 .table-wrapper {
     overflow-x: auto;
+    overflow-y: auto;
 }
 .table-wrapper th, td{
     border: 1px solid #ccc;

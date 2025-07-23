@@ -34,13 +34,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="sports.html" class="nav-link active">
+                        <a href="sports.html" class="nav-link ">
                             <span class="nav-icon"><i class="fas fa-futbol"></i></span>
                             <span class="nav-text">Sports</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="booking.html" class="nav-link">
+                        <a href="booking.html" class="nav-link active">
                             <span class="nav-icon"><i class="fas fa-calendar-alt"></i></span>
                             <span class="nav-text">Booking</span>
                         </a>
@@ -86,8 +86,8 @@
             <div class="content-area">
                 <div class="page-header">
                     <div class="page-title">
-                        <i class="fas fa-futbol page-title-icon"></i>
-                        <h1>Sports</h1>
+                        <i class="fas fa-calendar-alt page-title-icon"></i>
+                        <h1>Booking</h1>
                     </div>
                     <div class="page-actions">
                         <div class="search-container">
@@ -113,13 +113,13 @@
                                 Create
                             </button>
                             <!-- Modal -->
-                            <div id="createSportsModal" class="modal">
+                            <div id="createBookingModal" class="modal">
                                 <div class="modal-content">
                                     <!-- Modal Header -->
                                     <div class="modal-header">
                                         <div class="modal-title">
-                                            <i class="fas fa-football-ball"></i>
-                                            Create Sports
+                                            <i class="fas fa-calendar-alt"></i>
+                                            Create Booking
                                         </div>
                                         <button class="close-btn" onclick="closeModal()">
                                             <i class="fas fa-times"></i>
@@ -128,21 +128,25 @@
                     
                                     <!-- Modal Body -->
                                     <div class="modal-body">
-                                        <form id="createSportsForm">
+                                        <form id="createBookingForm">
                                             <!-- Sports Name Field -->
                                             <div class="form-group">
-                                                <label class="form-label" for="sportsName">Sports Name</label>
-                                                <input type="text" class="form-input" id="sportsName" name="sportsName"
-                                                    placeholder="Enter name" required>
+                                                <label class="form-label" for="role">Sports</label>
+                                                <select class="form-select" id="role" name="role" required>
+                                                    <option value="">Select Sports</option>
+                                                    <option value="admin">Cricket</option>
+                                                    <option value="admin">Football</option>
+                                                </select>
+                                                <div class="error-message" id="roleError">Please select a role</div>
                                             </div>
                     
                                             <!-- Date Field -->
                                             <div class="form-group">
                                                 <label class="form-label" for="date">Date</label>
                                                 <div class="input-wrapper">
-                                                    <input type="date" class="form-input date-input" id="date" name="date"
-                                                        placeholder="Enter date" required>
-                                                    <i class="fas fa-calendar-alt input-icon"></i>
+                                                    <input type="date" class="form-input" id="date" name="date"
+                                                        placeholder="Enter date" style="padding-right: 10px;" required>
+                                                   
                                                 </div>
                                             </div>
                     
@@ -162,6 +166,17 @@
                                                 <input type="number" class="form-input" id="amount" name="amount" placeholder="Enter amount"
                                                     required>
                                             </div>
+
+                                            <!-- Role Field -->
+                                            <div class="form-group">
+                                                <label class="form-label" for="role">Availability</label>
+                                                <select class="form-select" id="role" name="role" required>
+                                                    <option value="">Select Availability</option>
+                                                    <option value="admin">Available</option>
+                                                    <option value="admin">Not Available</option>
+                                                </select>
+                                                <div class="error-message" id="roleError">Please select a role</div>
+                                            </div>
                                         </form>
                                     </div>
                                     <!-- Modal Footer -->
@@ -180,23 +195,31 @@
                             <thead class="table-header">
                                 <tr>
                                     <th>S.no</th>
-                                    <th>Sports Name</th>
+                                    <th>Sports</th>
                                     <th>Date</th>
                                     <th>Timing</th>
                                     <th>Amount</th>
+                                    <th>Availability</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <thead class="filter-row">
                                 <tr>
                                     <td></td>
-                                    <td><input type="text" class="filter-input" placeholder="Filter sports name..." data-filter="sports name">
+                                    <td><input type="text" class="filter-input" placeholder="Filter sports name..." data-filter="sports">
                                     </td>
                                     <td><input type="text" class="filter-input" placeholder="Filter date..." data-filter="date">
                                     </td>
                                     <td><input type="text" class="filter-input" placeholder="Filter timing..."
                                             data-filter="contact"></td>
                                     <td><input type="text" class="filter-input" placeholder="Filter amount..." data-filter="amount"></td>
+                                    <td>
+                                        <select class="filter-input" data-filter="status">
+                                            <option value="">All Availability</option>
+                                            <option value="Active">Available</option>
+                                            <option value="Inactive">Not Available</option>
+                                        </select>
+                                    </td>
                                     <td></td>
                                 </tr>
                             </thead>
@@ -259,12 +282,12 @@
     <script>
         // Modal functions
         function openModal() {
-            document.getElementById('createSportsModal').classList.add('active');
+            document.getElementById('createBookingModal').classList.add('active');
         }
 
         function closeModal() {
-            document.getElementById('createSportsModal').classList.remove('active');
-            document.getElementById('createSportsForm').reset();
+            document.getElementById('createBookingModal').classList.remove('active');
+            document.getElementById('createBookingForm').reset();
         }
 
         function saveSports() {
@@ -282,7 +305,7 @@
         }
 
         // Close on outside click
-        document.getElementById('createSportsModal').onclick = function(e) {
+        document.getElementById('createBookingModal ').onclick = function(e) {
             if (e.target === this) closeModal();
         }
     </script>
