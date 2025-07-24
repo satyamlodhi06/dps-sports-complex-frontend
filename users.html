@@ -1,436 +1,686 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DPS Sports Complex Dashboard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DPS Sports Complex Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="dashboard-container">
-        <!-- Sidebar -->
-        <div class="sidebar" id="sidebar">
-            <div class="logo">
-                <img src="images/logo.png" alt="">
-            </div>
-            <nav>
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="dashboard.html" class="nav-link">
-                            <span class="nav-icon"><i class="fas fa-th-large"></i></span>
-                            <span class="nav-text">Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="users.html" class="nav-link active">
-                            <span class="nav-icon"><i class="fas fa-users"></i></span>
-                            <span class="nav-text">Users</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="sports.html" class="nav-link">
-                            <span class="nav-icon"><i class="fas fa-futbol"></i></span>
-                            <span class="nav-text">Sports</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="booking.html" class="nav-link">
-                            <span class="nav-icon"><i class="fas fa-calendar-alt"></i></span>
-                            <span class="nav-text">Booking</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="clients.html" class="nav-link">
-                            <span class="nav-icon"><i class="fas fa-user-tie"></i></span>
-                            <span class="nav-text">Clients</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <!-- Main Content -->
-        <div class="main-content" id="mainContent">
-            <!-- Header -->
-            <header class="header">
-                <div class="header-search">
-                    <button class="toggle-btn" id="toggleBtn">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <div class="search-bar-header">
-                      <h4>DPS Sports Complex</h4>
-                    </div>
-                </div>
-
-                <div class="header-right">
-                    <div class="notification-icon">
-                        <i class="fas fa-bell"></i>
-                        <span class="notification-badge">8</span>
-                    </div>
-
-                    <div class="user-profile">
-                        <div class="user-avatar">MR</div>
-                        <div class="user-info">
-                            <div class="user-name">Moni Roy</div>
-                            <div class="user-role">Admin</div>
-                        </div>
-                        <i class="fas fa-chevron-down dropdown-arrow"></i>
-                    </div>
-                </div>
-            </header>
-            <!-- Content Area -->
-            <div class="content-area">
-                <div class="page-header">
-                    <div class="page-title">
-                        <i class="fas fa-users page-title-icon"></i>
-                        <h1>Users</h1>
-                    </div>
-                    <div class="page-actions">
-                        <div class="search-bar-header">
-                            <i class="fas fa-search search-icon"></i>
-                            <input type="text" class="search-input" placeholder="Search...">
-                        </div>
-                        <button class="create-btn" onclick="openModal()">
-                            <i class="fas fa-plus"></i>
-                            Create
-                        </button>       
-                        <!-- Modal -->
-                        <div id="createUserModal" class="modal">
-                            <div class="modal-content">
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                    <div class="modal-title">
-                                        <i class="fas fa-user"></i>
-                                        Create User
-                                    </div>
-                                    <button class="close-btn" onclick="closeModal()">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                                <!-- Modal Body -->
-                                <div class="modal-body">
-                                    <form id="createUserForm">
-                                        <!-- Name Field -->
-                                        <div class="form-group">
-                                            <label class="form-label" for="name">Name</label>
-                                            <input type="text" class="form-input" id="name" name="name" placeholder="Enter name" required>
-                                            <div class="error-message" id="nameError">Name is required</div>
-                                        </div>
-
-                                        <!-- Email Field -->
-                                        <div class="form-group">
-                                            <label class="form-label" for="email">Email</label>
-                                            <input type="email" class="form-input" id="email" name="email" placeholder="Enter email" required>
-                                            <div class="error-message" id="emailError">Please enter a valid email</div>
-                                        </div>
-
-                                        <!-- Contact Number Field -->
-                                        <div class="form-group">
-                                            <label class="form-label" for="contactNumber">Contact Number</label>
-                                            <input type="tel" class="form-input" id="contactNumber" name="contactNumber" placeholder="Enter contact number">
-                                            <div class="error-message" id="contactError">Please enter a valid contact number</div>
-                                        </div>
-
-                                        <!-- Role Field -->
-                                        <div class="form-group">
-                                            <label class="form-label" for="role">Role</label>
-                                            <select class="form-select" id="role" name="role" required>
-                                                <option value="">Select Role</option>
-                                                <option value="admin">Admin</option>
-                                                <option value="admin">Sub Admin</option>
-                                                <option value="user">User</option>
-                                            </select>
-                                            <div class="error-message" id="roleError">Please select a role</div>
-                                        </div>
-
-                                        <!-- Status Field -->
-                                        <div class="form-group">
-                                            <label class="form-label" for="status">Status</label>
-                                            <select class="form-select" id="status" name="status" required>
-                                                <option value="">Select Status</option>
-                                                <option value="active">Active</option>
-                                                <option value="inactive">Inactive</option>
-                                            </select>
-                                            <div class="error-message" id="statusError">Please select a status</div>
-                                        </div>
-
-                                        <!-- Password Field -->
-                                        <div class="form-group">
-                                            <label class="form-label" for="password">Password</label>
-                                            <input type="password" class="form-input" id="password" name="password" placeholder="Enter password" required>
-                                            <div class="error-message" id="passwordError">Password must be at least 6 characters</div>
-                                        </div>
-
-                                        <!-- Confirm Password Field -->
-                                        <div class="form-group">
-                                            <label class="form-label" for="confirmPassword">Confirm Password</label>
-                                            <input type="password" class="form-input" id="confirmPassword" name="confirmPassword" placeholder="Enter confirm password" required>
-                                            <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
-                                        </div>
-                                    </form>
-                                </div>
-
-                                <!-- Modal Footer -->
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-cancel" onclick="closeModal()">Cancel</button>
-                                    <button type="button" class="btn btn-save" onclick="saveUser()">Save</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="content-body">
-                    <div class="table-wrapper">
-                        <table id="userTable">
-                            <thead class="table-header">
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Contact</th>
-                                    <th>Role</th>
-                                    <th>Permission</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <thead class="filter-row">
-                                <tr>
-                                    <td></td>
-                                    <td><input type="text" class="filter-input" placeholder="Filter name..." data-filter="name">
-                                    </td>
-                                    <td><input type="text" class="filter-input" placeholder="Filter email..." data-filter="email">
-                                    </td>
-                                    <td><input type="text" class="filter-input" placeholder="Filter contact..."
-                                            data-filter="contact"></td>
-                                    <td>
-                                        <select class="filter-input" data-filter="role">
-                                            <option value="">All Roles</option>
-                                            <option value="Admin">Admin</option>
-                                            <option value="Sub Admin">Sub Admin</option>
-                                            <option value="User">User</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <select class="filter-input" data-filter="permission">
-                                            <option value="">All Permissions</option>
-                                            <option value="Set Rights">Set Rights</option>
-                                            <option value="Edit">Edit</option>
-                                            <option value="View Only">View Only</option>
-                                        </select>
-                                    </td>
-                                    <td>
-                                        <select class="filter-input" data-filter="status">
-                                            <option value="">All Status</option>
-                                            <option value="Active">Active</option>
-                                            <option value="Inactive">Inactive</option>
-                                        </select>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                            </thead>
-                            <tbody id="tableBody">
-                                <!-- Data will be populated by JavaScript -->
-                            </tbody>
-                        </table>
-                        <div id="noResults" class="no-results" style="display: none;">
-                            No users found matching your filters
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="logo">
+        <img src="images/logo.png" alt="">
+      </div>
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link">
+              <span class="nav-icon"><i class="fas fa-th-large"></i></span>
+              <span class="nav-text">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="users.html" class="nav-link active">
+              <span class="nav-icon"><i class="fas fa-users"></i></span>
+              <span class="nav-text">Users</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="sports.html" class="nav-link">
+              <span class="nav-icon"><i class="fas fa-futbol"></i></span>
+              <span class="nav-text">Sports</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="booking.html" class="nav-link">
+              <span class="nav-icon"><i class="fas fa-calendar-alt"></i></span>
+              <span class="nav-text">Booking</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="clients.html" class="nav-link">
+              <span class="nav-icon"><i class="fas fa-user-tie"></i></span>
+              <span class="nav-text">Clients</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <script>
-        // Add some basic interactivity
-        document.addEventListener('DOMContentLoaded', function () {
-            // Toggle sidebar functionality
-            const toggleBtn = document.getElementById('toggleBtn');
-            const sidebar = document.getElementById('sidebar');
-            const mainContent = document.getElementById('mainContent');
-            const toggleIcon = toggleBtn.querySelector('i');
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-search">
+          <button class="toggle-btn" id="toggleBtn">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="search-bar-header">
+            <h4>DPS Sports Complex</h4>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="notification-icon">
+            <i class="fas fa-bell"></i>
+            <span class="notification-badge">8</span>
+          </div>
+          <div class="user-profile">
+            <div class="user-avatar">MR</div>
+            <div class="user-info">
+              <div class="user-name">Moni Roy</div>
+              <div class="user-role">Admin</div>
+            </div>
+            <i class="fas fa-chevron-down dropdown-arrow"></i>
+          </div>
+        </div>
+      </header>
+      <!-- Content Area -->
+      <div class="content-area">
+        <div class="page-header">
+          <div class="page-title">
+            <i class="fas fa-users page-title-icon"></i>
+            <h1>Users</h1>
+          </div>
+          <div class="page-actions">
+            <div class="search-bar-header">
+              <i class="fas fa-search search-icon"></i>
+              <input type="text" class="search-input" placeholder="Search...">
+            </div>
+            <button class="create-btn" onclick="openModal()">
+              <i class="fas fa-plus"></i>
+              Create
+            </button>
+            <!-- Modal -->
+            <div id="createUserModal" class="modal">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <div class="modal-title">
+                    <i class="fas fa-user"></i>
+                    Create User
+                  </div>
+                  <button class="close-btn" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <form id="createUserForm">
+                    <!-- Name Field -->
+                    <div class="form-group">
+                      <label class="form-label" for="name">Name</label>
+                      <input type="text" class="form-input" id="name" name="name" placeholder="Enter name" required>
+                      <div class="error-message" id="nameError">Name is required</div>
+                    </div>
 
-            toggleBtn.addEventListener('click', function () {
-                sidebar.classList.toggle('collapsed');
-                mainContent.classList.toggle('collapsed');
+                    <!-- Email Field -->
+                    <div class="form-group">
+                      <label class="form-label" for="email">Email</label>
+                      <input type="email" class="form-input" id="email" name="email" placeholder="Enter email" required>
+                      <div class="error-message" id="emailError">Please enter a valid email</div>
+                    </div>
 
-                // Change icon based on state
-                if (sidebar.classList.contains('collapsed')) {
-                    toggleIcon.className = 'fas fa-chevron-right';
-                } else {
-                    toggleIcon.className = 'fas fa-bars';
-                }
+                    <!-- Contact Number Field -->
+                    <div class="form-group">
+                      <label class="form-label" for="contactNumber">Contact Number</label>
+                      <input type="tel" class="form-input" id="contactNumber" name="contactNumber"
+                        placeholder="Enter contact number">
+                      <div class="error-message" id="contactError">Please enter a valid contact
+                        number</div>
+                    </div>
+
+                    <!-- Role Field -->
+                    <div class="form-group">
+                      <label class="form-label" for="role">Role</label>
+                      <select class="form-select" id="role" name="role" required>
+                        <option value="">Select Role</option>
+                        <option value="admin">Admin</option>
+                        <option value="admin">Sub Admin</option>
+                        <option value="user">User</option>
+                      </select>
+                      <div class="error-message" id="roleError">Please select a role</div>
+                    </div>
+
+                    <!-- Status Field -->
+                    <div class="form-group">
+                      <label class="form-label" for="status">Status</label>
+                      <select class="form-select" id="status" name="status" required>
+                        <option value="">Select Status</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                      </select>
+                      <div class="error-message" id="statusError">Please select a status</div>
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="form-group">
+                      <label class="form-label" for="password">Password</label>
+                      <input type="password" class="form-input" id="password" name="password"
+                        placeholder="Enter password" required>
+                      <div class="error-message" id="passwordError">Password must be at least 6
+                        characters</div>
+                    </div>
+
+                    <!-- Confirm Password Field -->
+                    <div class="form-group">
+                      <label class="form-label" for="confirmPassword">Confirm Password</label>
+                      <input type="password" class="form-input" id="confirmPassword" name="confirmPassword"
+                        placeholder="Enter confirm password" required>
+                      <div class="error-message" id="confirmPasswordError">Passwords do not match
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-cancel" onclick="closeModal()">Cancel</button>
+                  <button type="button" class="btn btn-save" onclick="saveUser()">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-body">
+          <div class="table-wrapper">
+            <table id="userTable">
+              <thead class="table-header">
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Contact</th>
+                  <th>Role</th>
+                  <th>Permission</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <thead class="filter-row">
+                <tr>
+                  <td></td>
+                  <td><input type="text" class="filter-input" placeholder="Filter name..." data-filter="name">
+                  </td>
+                  <td><input type="text" class="filter-input" placeholder="Filter email..." data-filter="email">
+                  </td>
+                  <td><input type="text" class="filter-input" placeholder="Filter contact..." data-filter="contact">
+                  </td>
+                  <td>
+                    <select class="filter-input" data-filter="role">
+                      <option value="">All Roles</option>
+                      <option value="Admin">Admin</option>
+                      <option value="Sub Admin">Sub Admin</option>
+                      <option value="User">User</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="filter-input" data-filter="permission">
+                      <option value="">All Permissions</option>
+                      <option value="Set Rights">Set Rights</option>
+                      <option value="Edit">Edit</option>
+                      <option value="View Only">View Only</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="filter-input" data-filter="status">
+                      <option value="">All Status</option>
+                      <option value="Active">Active</option>
+                      <option value="Inactive">Inactive</option>
+                    </select>
+                  </td>
+                  <td></td>
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+                <tr>
+                  <td>------</td>
+                  <td>------</td>
+                  <td>------</td>
+                  <td>------</td>
+                  <td>------</td>
+                  <td>------</td>
+                  <td><button class="rights-trigger-btn" onclick="openRightsModal()">Set
+                      Rights</button></td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="action-btn edit-btn" onclick="editRow()">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="action-btn delete-btn" onclick="deleteRow()">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="noResults" class="no-results" style="display: none;">
+              No users found matching your filters
+            </div>
+            <!-- Modal permission -->
+            <div class="rights-modal-overlay" id="rightsModalOverlay">
+              <div class="rights-modal">
+                <div class="rights-modal-header">
+                  <div class="rights-modal-title">
+                    <svg class="rights-user-icon" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                    </svg>
+                    Permission
+                  </div>
+                  <button class="rights-close-btn" onclick="closeRightsModal()">×</button>
+                </div>
+
+                <div class="rights-modal-body">
+                  <table class="rights-permissions-table">
+                    <thead>
+                      <tr>
+                        <th>Menu</th>
+                        <th>View</th>
+                        <th>Edit</th>
+                        <th>Add</th>
+                        <th>Delete</th>
+                        <th>All</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Dashboard</td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Dashboard" data-permission="View"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Dashboard" data-permission="Edit"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Dashboard" data-permission="Add"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Dashboard" data-permission="Delete"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Dashboard" data-permission="All"></div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>User</td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="User" data-permission="View"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="User" data-permission="Edit"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="User" data-permission="Add"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="User" data-permission="Delete"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="User" data-permission="All"></div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Sports</td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Sports" data-permission="View"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Sports" data-permission="Edit"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Sports" data-permission="Add"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Sports" data-permission="Delete"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Sports" data-permission="All"></div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Booking</td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Booking" data-permission="View"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Booking" data-permission="Edit"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Booking" data-permission="Add"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Booking" data-permission="Delete"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Booking" data-permission="All"></div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Clients</td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Clients" data-permission="View"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Clients" data-permission="Edit"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Clients" data-permission="Add"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Clients" data-permission="Delete"></div>
+                        </td>
+                        <td>
+                          <div class="rights-checkbox-container"><input type="checkbox" class="rights-custom-checkbox"
+                              data-menu="Clients" data-permission="All"></div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="rights-modal-footer">
+                  <button class="rights-btn rights-btn-cancel" onclick="closeRightsModal()">Cancel</button>
+                  <button class="rights-btn rights-btn-save" onclick="saveRightsPermissions()">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Add some basic interactivity
+    document.addEventListener('DOMContentLoaded', function () {
+      // Toggle sidebar functionality
+      const toggleBtn = document.getElementById('toggleBtn');
+      const sidebar = document.getElementById('sidebar');
+      const mainContent = document.getElementById('mainContent');
+      const toggleIcon = toggleBtn.querySelector('i');
+
+      toggleBtn.addEventListener('click', function () {
+        sidebar.classList.toggle('collapsed');
+        mainContent.classList.toggle('collapsed');
+
+        // Change icon based on state
+        if (sidebar.classList.contains('collapsed')) {
+          toggleIcon.className = 'fas fa-chevron-right';
+        } else {
+          toggleIcon.className = 'fas fa-bars';
+        }
+      });
+      // Handle navigation clicks
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          if (this.getAttribute('href') === '#') {
+            e.preventDefault();
+          }
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+      // Handle search functionality
+      const searchInputs = document.querySelectorAll('input[type="text"]');
+      searchInputs.forEach(input => {
+        input.addEventListener('focus', function () {
+          this.style.boxShadow = '0 0 0 3px rgba(104, 211, 145, 0.1)';
+        });
+
+        input.addEventListener('blur', function () {
+          this.style.boxShadow = 'none';
+        });
+      });
+    });
+  </script>
+  <script>
+    // Modal functionality
+    function openModal() {
+      document.getElementById('createUserModal').classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    function closeModal() {
+      document.getElementById('createUserModal').classList.remove('active');
+      document.body.style.overflow = 'auto'; // Restore scrolling
+      resetForm();
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('createUserModal').addEventListener('click', function (e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    // Form validation
+    function validateForm() {
+      let isValid = true;
+
+      // Clear previous errors
+      clearErrors();
+
+      // Name validation
+      const name = document.getElementById('name').value.trim();
+      if (!name) {
+        showError('name', 'nameError');
+        isValid = false;
+      }
+
+      // Email validation
+      const email = document.getElementById('email').value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email)) {
+        showError('email', 'emailError');
+        isValid = false;
+      }
+
+      // Contact number validation (optional but if provided should be valid)
+      const contactNumber = document.getElementById('contactNumber').value.trim();
+      if (contactNumber && !/^\d{10}$/.test(contactNumber)) {
+        showError('contactNumber', 'contactError');
+        isValid = false;
+      }
+
+      // Role validation
+      const role = document.getElementById('role').value;
+      if (!role) {
+        showError('role', 'roleError');
+        isValid = false;
+      }
+
+      // Status validation
+      const status = document.getElementById('status').value;
+      if (!status) {
+        showError('status', 'statusError');
+        isValid = false;
+      }
+
+      // Password validation
+      const password = document.getElementById('password').value;
+      if (!password || password.length < 6) {
+        showError('password', 'passwordError');
+        isValid = false;
+      }
+
+      // Confirm password validation
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      if (password !== confirmPassword) {
+        showError('confirmPassword', 'confirmPasswordError');
+        isValid = false;
+      }
+
+      return isValid;
+    }
+
+    function showError(fieldId, errorId) {
+      document.getElementById(fieldId).classList.add('error');
+      document.getElementById(errorId).classList.add('show');
+    }
+
+    function clearErrors() {
+      const errorFields = document.querySelectorAll('.form-input.error');
+      const errorMessages = document.querySelectorAll('.error-message.show');
+
+      errorFields.forEach(field => field.classList.remove('error'));
+      errorMessages.forEach(message => message.classList.remove('show'));
+    }
+
+    function resetForm() {
+      document.getElementById('createUserForm').reset();
+      clearErrors();
+    }
+
+    function saveUser() {
+      if (validateForm()) {
+        // Get form data
+        const formData = {
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          contactNumber: document.getElementById('contactNumber').value,
+          role: document.getElementById('role').value,
+          status: document.getElementById('status').value,
+          password: document.getElementById('password').value
+        };
+
+        // Here you would typically send the data to your server
+        console.log('Form Data:', formData);
+
+        // Show success message
+        alert('User created successfully!');
+
+        // Close modal
+        closeModal();
+      }
+    }
+
+    // Remove error styling on input focus
+    document.querySelectorAll('.form-input, .form-select').forEach(input => {
+      input.addEventListener('focus', function () {
+        this.classList.remove('error');
+        const errorId = this.id + 'Error';
+        const errorElement = document.getElementById(errorId);
+        if (errorElement) {
+          errorElement.classList.remove('show');
+        }
+      });
+    });
+  </script>
+  <script>
+    function openRightsModal() {
+      document.getElementById('rightsModalOverlay').classList.add('active');
+    }
+
+    function closeRightsModal() {
+      document.getElementById('rightsModalOverlay').classList.remove('active');
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('rightsModalOverlay').addEventListener('click', function (e) {
+      if (e.target === this) {
+        closeRightsModal();
+      }
+    });
+
+    // Handle checkbox logic
+    document.addEventListener('DOMContentLoaded', function () {
+      const checkboxes = document.querySelectorAll('.rights-custom-checkbox');
+
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+          const menu = this.dataset.menu;
+          const permission = this.dataset.permission;
+
+          if (permission === 'All') {
+            // If "All" is checked/unchecked, update all other checkboxes for this menu
+            const allCheckboxes = document.querySelectorAll(`[data-menu="${menu}"]`);
+            allCheckboxes.forEach(cb => {
+              cb.checked = this.checked;
             });
-            // Handle navigation clicks
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function (e) {
-                    if (this.getAttribute('href') === '#') {
-                        e.preventDefault();
-                    }
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-            // Handle search functionality
-            const searchInputs = document.querySelectorAll('input[type="text"]');
-            searchInputs.forEach(input => {
-                input.addEventListener('focus', function () {
-                    this.style.boxShadow = '0 0 0 3px rgba(104, 211, 145, 0.1)';
-                });
+          } else {
+            // If individual permission is changed, update "All" checkbox
+            const individualCheckboxes = document.querySelectorAll(`[data-menu="${menu}"]:not([data-permission="All"])`);
+            const allCheckbox = document.querySelector(`[data-menu="${menu}"][data-permission="All"]`);
 
-                input.addEventListener('blur', function () {
-                    this.style.boxShadow = 'none';
-                });
-            }); 
+            const allChecked = Array.from(individualCheckboxes).every(cb => cb.checked);
+            const someChecked = Array.from(individualCheckboxes).some(cb => cb.checked);
+
+            allCheckbox.checked = allChecked;
+            allCheckbox.indeterminate = someChecked && !allChecked;
+          }
         });
-    </script>
-    <script>
-        // Modal functionality
-        function openModal() {
-            document.getElementById('createUserModal').classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      });
+    });
+
+    function saveRightsPermissions() {
+      const permissions = {};
+      const checkboxes = document.querySelectorAll('.rights-custom-checkbox');
+
+      checkboxes.forEach(checkbox => {
+        const menu = checkbox.dataset.menu;
+        const permission = checkbox.dataset.permission;
+
+        if (!permissions[menu]) {
+          permissions[menu] = {};
         }
 
-        function closeModal() {
-            document.getElementById('createUserModal').classList.remove('active');
-            document.body.style.overflow = 'auto'; // Restore scrolling
-            resetForm();
-        }
+        permissions[menu][permission] = checkbox.checked;
+      });
 
-        // Close modal when clicking outside
-        document.getElementById('createUserModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
+      // Here you can handle the permissions data
+      console.log('Permissions saved:', permissions);
+      alert('Permissions saved successfully!');
+      closeRightsModal();
+    }
 
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-
-        // Form validation
-        function validateForm() {
-            let isValid = true;
-            
-            // Clear previous errors
-            clearErrors();
-            
-            // Name validation
-            const name = document.getElementById('name').value.trim();
-            if (!name) {
-                showError('name', 'nameError');
-                isValid = false;
-            }
-            
-            // Email validation
-            const email = document.getElementById('email').value.trim();
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!email || !emailRegex.test(email)) {
-                showError('email', 'emailError');
-                isValid = false;
-            }
-            
-            // Contact number validation (optional but if provided should be valid)
-            const contactNumber = document.getElementById('contactNumber').value.trim();
-            if (contactNumber && !/^\d{10}$/.test(contactNumber)) {
-                showError('contactNumber', 'contactError');
-                isValid = false;
-            }
-            
-            // Role validation
-            const role = document.getElementById('role').value;
-            if (!role) {
-                showError('role', 'roleError');
-                isValid = false;
-            }
-            
-            // Status validation
-            const status = document.getElementById('status').value;
-            if (!status) {
-                showError('status', 'statusError');
-                isValid = false;
-            }
-            
-            // Password validation
-            const password = document.getElementById('password').value;
-            if (!password || password.length < 6) {
-                showError('password', 'passwordError');
-                isValid = false;
-            }
-            
-            // Confirm password validation
-            const confirmPassword = document.getElementById('confirmPassword').value;
-            if (password !== confirmPassword) {
-                showError('confirmPassword', 'confirmPasswordError');
-                isValid = false;
-            }
-            
-            return isValid;
-        }
-
-        function showError(fieldId, errorId) {
-            document.getElementById(fieldId).classList.add('error');
-            document.getElementById(errorId).classList.add('show');
-        }
-
-        function clearErrors() {
-            const errorFields = document.querySelectorAll('.form-input.error');
-            const errorMessages = document.querySelectorAll('.error-message.show');
-            
-            errorFields.forEach(field => field.classList.remove('error'));
-            errorMessages.forEach(message => message.classList.remove('show'));
-        }
-
-        function resetForm() {
-            document.getElementById('createUserForm').reset();
-            clearErrors();
-        }
-
-        function saveUser() {
-            if (validateForm()) {
-                // Get form data
-                const formData = {
-                    name: document.getElementById('name').value,
-                    email: document.getElementById('email').value,
-                    contactNumber: document.getElementById('contactNumber').value,
-                    role: document.getElementById('role').value,
-                    status: document.getElementById('status').value,
-                    password: document.getElementById('password').value
-                };
-                
-                // Here you would typically send the data to your server
-                console.log('Form Data:', formData);
-                
-                // Show success message
-                alert('User created successfully!');
-                
-                // Close modal
-                closeModal();
-            }
-        }
-
-        // Remove error styling on input focus
-        document.querySelectorAll('.form-input, .form-select').forEach(input => {
-            input.addEventListener('focus', function() {
-                this.classList.remove('error');
-                const errorId = this.id + 'Error';
-                const errorElement = document.getElementById(errorId);
-                if (errorElement) {
-                    errorElement.classList.remove('show');
-                }
-            });
-        });
-    </script>
+    // ESC key to close modal
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeRightsModal();
+      }
+    });
+  </script>
 </body>
 
 </html>
