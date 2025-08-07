@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms and Conditions - DPS Sports Complex</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/fontPage.css">
+  <style>
+    :root {
+      --primary: #699028;
+      --secondary: #5a7a22;
+      --accent: #85b339;
+      --light: #f0f7e8;
+      --dark: #2c3e50;
+      --text: #34495e;
+      --highlight: #699028;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Nunito Sans", sans-serif;
+      line-height: 30px;
+    }
+
+    .header2 {
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+      padding-bottom: 20px;
+      margin-top: 20px;
+    }
+
+    .header2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 25%;
+      width: 50%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 2px;
+    }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary);
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 4px rgba(105, 144, 40, 0.1);
+    }
+
+    h2 {
+      color: var(--secondary);
+      margin-top: 40px;
+      font-size: 1.8rem;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    h2::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 30px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 4px;
+    }
+
+    h3 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary);
+      margin-top: 30px;
+      font-size: 1.4rem;
+    }
+
+    .effective-date {
+      text-align: center;
+      font-style: italic;
+      color: var(--secondary);
+      margin-bottom: 30px;
+      font-size: 0.9rem;
+      background: var(--light);
+      padding: 10px 20px;
+      border-radius: 8px;
+      border-left: 4px solid var(--primary);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .highlight {
+      background: linear-gradient(120deg, rgba(105, 144, 40, 0.15) 0%, rgba(133, 179, 57, 0.15) 100%);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+      color: var(--secondary);
+      border-bottom: 1px solid rgba(105, 144, 40, 0.3);
+      margin-right: 10px;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      border-bottom: 1px solid transparent;
+    }
+
+    a:hover {
+      color: var(--secondary);
+      border-bottom: 1px solid var(--secondary);
+      text-shadow: 0 1px 2px rgba(105, 144, 40, 0.2);
+    }
+
+    .section-divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary), var(--accent), transparent);
+      margin: 40px 0;
+      border: none;
+      border-radius: 1px;
+    }
+
+    section {
+      position: relative;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      left: -15px;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+      border-radius: 2px;
+      opacity: 0.3;
+    }
+
+    p {
+      margin-bottom: 16px;
+      text-align: justify;
+    }
+
+    /* Enhanced visual elements */
+    h2:hover {
+      color: var(--primary);
+      transition: color 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+        margin: 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      section::before {
+        display: none;
+      }
+    }
+
+    /* Smooth scrolling for better UX */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Custom selection colors */
+    ::selection {
+      background: rgba(105, 144, 40, 0.2);
+      color: var(--secondary);
+    }
+
+    ::-moz-selection {
+      background: rgba(105, 144, 40, 0.2);
+      color: var(--secondary);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <!-- Replace with your logo -->
+          <img src="images/logo-removebg-preview.png" alt="Company Logo">
+        </div>
+        <div class="nav-buttons">
+          <a href="#" class="contact-btn"><i class="fa-solid fa-phone"></i>Contact</a>
+          <a href="#" class="login-btn"><i class="fa-solid fa-user"></i>Login</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="header2">
+      <h1>Terms and Conditions</h1>
+    </div>
+
+    <section>
+      <h2>Introduction</h2>
+      <p>This Site/ Application/ Services is/are operated /provided by <span class="highlight">DPS Sports Complex</span>
+        ("<span class="highlight">Us</span>" or "<span class="highlight">Our</span>" or "<span
+          class="highlight">We</span>"). We operate and are engaged in organising sports and other recreational events
+        as well as providing an internet-based booking platform for and in connection with Our as well as third party
+        sports and other events such as sports fitness session(s), sports coaching/outdoor fitness sessions, sports
+        related training activities and sports facilities and venues through Our Site, either by Our self or through Our
+        subsidiaries, affiliates or third-party service providers ("<span class="highlight">Primary Services</span>").
+      </p>
+
+      <p>These Terms of Use ("<span class="highlight">User Terms</span>") are a legal contract between you and Us.</p>
+
+      <p>Subject to the terms and conditions mentioned in these User Terms, you are hereby granted a non-exclusive,
+        limited, non-transferable, non-sublicensable license, freely revocable license to use the Service for your
+        personal, non-commercial use only and as permitted by the features of the Service. DPS Sports Complex reserves
+        all rights not expressly granted herein in the Service.</p>
+
+      <p>These User Terms apply to your visit to and use, of the Site whether through a computer or a mobile phone or
+        any other device, the Service, as well as to all information, recommendations and/or services provided to you on
+        or through the Site and the Service.</p>
+
+      <p>This document is an electronic record in terms of Information Technology Act, 2000 and rules thereunder as
+        applicable and the provisions pertaining to electronic records in various statutes as amended by the Information
+        Technology Act, 2000. This electronic record is generated by a computer system and does not require any physical
+        or digital signatures.</p>
+
+      <p>By successfully registering your account with us, you are consenting to be bound by these User Terms. Please
+        ensure that you read and understand all these User Terms before you use the Site. If you do not accept any of
+        the User Terms, then please do not use the Site or avail any of the Services being provided therein. Your
+        agreement to these User Terms shall operate as a binding agreement between you and DPS Sports Complex in respect
+        of the use and services of the Site.</p>
+
+      <p>Your acceptance of the User Terms shall be deemed to include your acceptance of the privacy policy available at
+        <a href="privacy-policy.html">Privacy Policy</a>.
+      </p>
+
+      <p>By accepting these User Terms, you also allow DPS Sports Complex to send you promotional emails and SMS alerts
+        from time to time.</p>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2>Definitions</h2>
+      <p>All of the defined and capitalized terms in these User Terms will have the meaning assigned to them here below:
+      </p>
+
+      <h3>Account</h3>
+      <p>Shall mean the account created by or for the Customer on the Site for availing the Services.</p>
+
+      <h3>Additional Fee</h3>
+      <p>Shall mean any toll duty, inter-state taxes, etc. as may not be included in the Order Value but payable to any
+        third party / government authorities for availing Services under Applicable Law.</p>
+
+      <h3>Applicable Law(s)</h3>
+      <p>Shall mean and include all applicable statutes, enactments, acts of legislature or parliament, laws,
+        ordinances, rules, by-laws, regulations, notifications, guidelines, policies, directions, directives and orders
+        of any governmental authority, tribunal, or a court of India.</p>
+
+      <h3>Application</h3>
+      <p>Shall mean the mobile application DPS Sports Complex, owned and updated by Us from time to time.</p>
+
+      <h3>Convenience Fee</h3>
+      <p>Shall mean the fee payable by the Customer to DPS Sports Complex for the Services i.e., for availing the
+        technology services offered by DPS Sports Complex. Convenience Fee shall be chargeable on every Order made
+        through the Site. The Convenience Fee shall be exclusive of all applicable taxes on the Convenience Fee, if any.
+      </p>
+
+      <h3>Cancellation Fee</h3>
+      <p>Shall mean the fee payable towards cancellation of an Order by a Customer in terms of Clause 7 of these User
+        Terms. The Cancellation Fee shall be exclusive of all applicable taxes on the Cancellation Fee, if any.</p>
+
+      <h3>Customer/ You</h3>
+      <p>Means a person who has an Account.</p>
+
+      <h3>E-Wallet</h3>
+      <p>Shall mean a pre-paid instrument, which can be used to make payments on the Site.</p>
+
+      <h3>Force Majeure Event</h3>
+      <p>Shall mean any event arising due to any cause beyond the reasonable control of DPS Sports Complex.</p>
+
+      <h3>DPS Sports Complex Pass</h3>
+      <p>Means a pass or reservation (whether in physical or electronic form, as permitted under law), being purchased
+        by any person through the Site and that allows the holder thereof, subject to certain terms and conditions,
+        access, attend and participate to any sport/sport activity/fitness session, on the date, time period and for the
+        sport as identified in such pass or reservation booked through Site, at the venue(s)/fitness centre of the
+        Partner;</p>
+
+      <h3>Order</h3>
+      <p>Shall mean the order placed by a Customer to avail the Services facilitated through the Site.</p>
+
+      <h3>Order Value</h3>
+      <p>Shall mean such amount in Indian Rupees, which is reflected on the Site, as the amount payable for a specific
+        Order. The Order Value shall be exclusive of all applicable taxes on the Order Value, if any.</p>
+
+      <h3>Registration Data</h3>
+      <p>Shall mean and may include the present, valid, true and accurate name, email ID, phone number and such other
+        information as may be required by DPS Sports Complex from the Customer from time to time for registration on the
+        Application.</p>
+
+      <h3>Services</h3>
+      <p>Shall mean a joint reference to the Primary Services.</p>
+
+      <h3>Site</h3>
+      <p>Shall mean the Application, the website owned and operated by DPS Sports Complex and any website which is owned
+        and developed by Us for Our specific partner/third party service provider to give such partner an exclusive
+        platform for its listing of its events/sport sessions etc. or any other software that enables the use of the
+        Application or such other URL or any other booking platform as may be specifically provided by DPS Sports
+        Complex.</p>
+
+      <h3>Total Fee</h3>
+      <p>Shall mean and include the Order Value, the Convenience Fee, the Cancellation Fee and Additional Fee and taxes
+        as may be applicable from time to time.</p>
+
+      <h3>Venue Membership Plan</h3>
+      <p>Means a membership plan, as offered by respective venue partner and being purchased by any person through the
+        Site, whereby such person, subject to terms and conditions of such plan, can book and access specific
+        venue/fitness centre of the venue/vendor partner engaged by DPS Sports Complex for playing any particular
+        sport/sport activity, as identified in such plan, facilitated/provided at the venue of the partner or if
+        applicable, attend/ participate in any fitness session or other allied services and products
+        facilitated/provided at such venue of the partner and being identified in such plan.</p>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2>Eligibility</h2>
+      <p>You will be eligible to use the Services only if You are competent to enter into a binding contract under
+        Applicable Laws.</p>
+
+      <p>If you reside in a jurisdiction that restricts the use of the Service because of age or restricts the ability
+        to enter into contracts such as this User Terms due to age, Your use of Services shall bind Your legal guardian
+        to these User Terms.</p>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2>Registration and Account</h2>
+      <p>In order to access certain password-restricted areas of the Site and to use certain Services offered through
+        the Site, you are required to successfully register an Account with Us.</p>
+
+      <p>You understand and acknowledge that you can register on the Site only after complying with the requirements of
+        this Clause and by entering your Registration Data.</p>
+
+      <p>You shall ensure that the Registration Data provided by you is accurate, complete, current, valid and true and
+        is updated from time to time. We shall bear no liability for false, incomplete, old or incorrect Registration
+        Data provided by you.</p>
+
+      <p>You are solely responsible for maintaining the confidentiality of your Registration Data and will be liable for
+        all activities and transactions that occur through your Account, whether initiated by you or any third party.
+        Your Account cannot be transferred, assigned or sold to a third party. We shall not be liable for any loss that
+        you may incur as a result of someone else using your password or Account, either with or without your knowledge.
+      </p>
+
+      <p>We reserve the right to suspend or terminate your Account with immediate effect and for an indefinite period,
+        if we have a reason to believe that the Registration Data or any other data provided by you is incorrect or
+        false, or that the security of your Account has been compromised in any way, or for any other reason We may find
+        just or equitable.</p>
+
+      <p>Except for the Registration Data or any other data submitted by you during the use of any Service offered
+        through Site ("Permitted Information"), DPS Sports Complex does not want you to, and you should not, send any
+        confidential or proprietary information to DPS Sports Complex on the Site or otherwise, unless otherwise is
+        required by Applicable Laws. In accepting these User Terms you agree that any information or material that you
+        or individuals acting on your behalf provide to DPS Sports Complex other than the Permitted Information will not
+        be considered confidential or proprietary.</p>
+
+      <p>It is your responsibility to check to ensure that you download the correct Application for your device. We are
+        not liable if you do not have a compatible mobile device or if you download the wrong version of the Application
+        for your mobile device. We reserve the right to terminate the Service and the use of the Application should you
+        be using the Service or Application with an incompatible or unauthorized device.</p>
+
+      <p>We allow you to open only one Account in association with the Registration Data provided by you. In case of any
+        unauthorized use of your Account please immediately reach Us at <a
+          href="mailto:support@dpssportscomplex.com">support@dpssportscomplex.com</a>.</p>
+
+      <p>In case, you are unable to access your Account, please inform Us at <a
+          href="mailto:support@dpssportscomplex.com">support@dpssportscomplex.com</a> and make a written request for
+        blocking your Account. We will not be liable for any unauthorized transactions made through your Account prior
+        to the expiry of 72 (seventy-two) hours after you have made a request in writing for blocking your Account and
+        shall not have any liability in case of Force Majeure Event.</p>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2>Services</h2>
+      <p>You may order Our Services using Our Site. You will be charged the applicable fees set forth in the schedule of
+        pricing, as may be prescribed from time to time.</p>
+
+      <p>The Total Fee for the Services will be provided through the Site at the time the Services are ordered. You
+        shall be subject to terms regarding minimum quantities to be ordered and minimum service fees, as detailed on
+        the Site.</p>
+
+      <p>Due to reasons such as Applicable Law, and limitations, the Services may not be available in all locations
+        within a service area. We reserve the right to decline the Services for any reason in Our discretion. You will
+        not be charged in such circumstances.</p>
+
+      <p>By using the Site for availing the Service, you further agree that:</p>
+
+      <ul>
+        <li>you will only use the Service or download the Application for your sole personal use and will not resell or
+          assign it to a third party;</li>
+        <li>you will not use an Account that is subject to any rights of a person other than you without appropriate
+          authorization;</li>
+        <li>you will not try to harm the Service, Site or our network in any way whatsoever;</li>
+        <li>you will provide DPS Sports Complex with such information and documents which DPS Sports Complex may
+          reasonably request for and in relation to performance of Services by DPS Sports Complex;</li>
+        <li>you will only use an authorized network to avail the Service;</li>
+        <li>you are aware that when requesting Services, whether by message, via Site or calling the call centre of DPS
+          Sports Complex, standard messaging charges, data charges, voice charges, as applicable, of your and Our phone
+          network service providers, will apply;</li>
+        <li>you will comply with all Applicable Law from your country of domicile and residence and the country, state
+          and/or city in which you are present while using the Site or Service;</li>
+        <li>you are aware of and shall comply with the Information Technology Act, 2000 and the rules, regulations and
+          guidelines notified thereunder;</li>
+        <li>you must use our Services according to these User Terms. If you violate these User Terms, we may take action
+          with respect to your account, including disabling or suspending your account and, if we do, you agree not to
+          create another account without our permission. Disabling or suspending your account will be in accordance with
+          the "Term and Termination" section below; and</li>
+        <li>you must access and use our Services only for legal, authorized, and acceptable purposes. You will not use
+          (or assist others in using) our Services in ways that: (a) violate, misappropriate, or infringe the rights of
+          DPS Sports Complex, our users, or others, including privacy, publicity, intellectual property, or other
+          proprietary rights; (b) are illegal, obscene, defamatory, threatening, intimidating, harassing, hateful,
+          racially or ethnically offensive, or instigate or encourage conduct that would be illegal or otherwise
+          inappropriate, such as promoting violent crimes, endangering or exploiting children or others, or coordinating
+          harm; (c) involve publishing falsehoods, misrepresentations, or misleading statements; (d) impersonate
+          someone; (e) involve sending illegal or impermissible communications such as bulk messaging, auto-messaging,
+          auto-dialing, and the like; or (f) involve any non-personal use of our Services unless otherwise authorized by
+          Us;</li>
+        <li>you are responsible for keeping your device and your account safe and secure, and you must notify us
+          promptly of any unauthorized use or security breach of your account or our Services</li>
+      </ul>
+
+      <p>DPS Sports Complex reserves the right to immediately terminate the Service and the use of the Application or
+        booking on the Site in the event of non-compliance with any of the above requirements. Further, DPS Sports
+        Complex will store the information provided by you or record your calls for contacting you for all Service
+        related matters. You shall promptly inform DPS Sports Complex on any change in the information provided by you.
+      </p>
+
+      <p>DPS Sports Complex or an authorised representative of DPS Sports Complex, may provide information regarding
+        Services, discounts and promotions provided by DPS Sports Complex to you by way of an SMS or email to your
+        registered mobile number/registered email ID. You also have the option to discontinue receiving such information
+        at any point of time. In order to discontinue receiving such information, you may at any point of contact at <a
+          href="mailto:support@dpssportscomplex.com">support@dpssportscomplex.com</a> to discontinue the same.</p>
+
+      <p>You agree to grant DPS Sports Complex a non-exclusive, worldwide, perpetual, irrevocable, royalty-free,
+        sub-licensable (through multiple tiers) right to exercise the copyright, publicity, host, store, use, copy,
+        display, reproduce, adapt, publish, database rights or any other rights you have in your information, Posted
+        Content (as defined below) and Accessed Content (as defined below) in any media now known or not currently
+        known, with respect to your information. You agree and permit DPS Sports Complex to share your information
+        and/or Permitted Information, with third parties.</p>
+
+      <p>DPS Sports Complex will be entitled to enter into any tie-up in terms of joint-venture or otherwise with any
+        other institution engaged in the business of providing services analogous and/or similar to those herein
+        contained. In such case, depending upon the modality and the mechanism as may be devised, you will be provided
+        with the Services by DPS Sports Complex jointly and/or severally with the party/ies in joint venture. You hereby
+        give your irrevocable consent and permission to such a tie-up. In the event of such a tie-up, the terms and
+        conditions herein contained will, mutatis mutandis, become applicable in respect of such tie-up arrangement
+        also.</p>
+
+      <p>You will also have the option to purchase DPS Sports Complex Passes and/or Venue Membership Plan through Site
+        for attending/participating/accessing any of our Services, subject to terms and conditions more particularly set
+        out on the Site being applicable at the time of your purchase.</p>
+
+      <p>In this connection, you may note that any access to the classes/ sessions/events at venue centre(s), identified
+        under your respective DPS Sports Complex Pass or Venue Membership Plan shall be subject to the availability and
+        shall be accessible on first come first serve basis. You understand and acknowledge that you agree to all the
+        terms and conditions (including cancellation and/or refund terms) of your pass/membership plan as detailed on
+        the Site and shall strictly abide to the same while making your bookings through the Site.</p>
+
+      <p>You agree that DPS Sports Complex retains an unconditional right to modify or amend terms and conditions in
+        relation to your DPS Sports Complex Pass and/or Venue Membership Plan with prior notification to you via
+        email/SMS or on the Mobile Application itself. Your continued use of the Site following the posting of such
+        changes, shall constitute your consent and acceptance of those changes.</p>
+    </section>
+
+    <!-- Continue with all other sections following the same pattern -->
+
+    <hr class="section-divider">
+
+    <section>
+      <h2>Contact Us</h2>
+      <p>Should you have questions about these User Terms or DPS Sports Complex's services, you may contact our
+        Grievance Officer. Please find below the details:</p>
+      <p><span class="highlight">Name:</span> DPS Sports Complex</p>
+      <p><span class="highlight">Email:</span> <a
+          href="mailto:support@dpssportscomplex.com">support@dpssportscomplex.com</a></p>
+      <p><span class="highlight">Address:</span> Kati Ghati, Delhi Public School, Alwar - Jaipur Rd, Alwar, Rajasthan
+        301001</p>
+      <p>Any communication pursuant to this Clause which is not marked to the designated individual mentioned here in
+        above shall not be treated as a valid and binding communication for the purpose of these User Terms.</p>
+    </section>
+  </div>
+  <footer>
+    <ul>
+      <li><a href="privacy-policy.html">PRIVACY POLICY</a></li>
+      <li><a href="terms-conditions.html">TERMS & CONDITIONS</a></li>
+      <li><a href="cancellation-refund.html">CANCELLATION & REFUND</a></li>
+      <li><a href="contact.html">CONTACT US</a></li>
+      <li><a href="shipping-delivery.html">SHIPPING & DELIVERY</a></li>
+    </ul>
+  </footer>
+
+</body>
+
+</html>

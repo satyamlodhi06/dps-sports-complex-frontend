@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DPS Sports Complex</title>
+  <link rel="stylesheet" href="css/fontPage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <!-- Replace with your logo -->
+          <img src="images/logo-removebg-preview.png" alt="Company Logo">
+        </div>
+        <div class="nav-buttons">
+          <a href="#" class="contact-btn"><i class="fa-solid fa-phone"></i>Contact</a>
+          <a href="#" class="login-btn"><i class="fa-solid fa-user"></i>Login</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="video-container">
+      <video autoplay muted loop>
+        <source src="video/video.mp4" type="video/mp4">
+        <source src="video/video.mp4" type="video/mp4">
+      </video>
+
+      <div class="creative-location-box">
+        <div class="location-header">
+          <i class="fas fa-map-marker-alt pulse-icon"></i>
+          <h3>Our Location</h3>
+          <div class="divider"></div>
+        </div>
+        <div class="location-details">
+          <p><i class="fas fa-school"></i> Kati Ghati, Delhi Public School</p>
+          <p><i class="fas fa-road"></i> Alwar - Jaipur Road</p>
+          <p><i class="fas fa-city"></i> Alwar, Rajasthan 301001</p>
+        </div>
+        <div class="direction-btn">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=DPS+Sports+Complex,+Kati+Ghati,+Delhi+Public+School,+Alwar+-+Jaipur+Rd,+Alwar,+Rajasthan+301001"
+            target="_blank">
+            <i class="fas fa-directions"></i> Get Directions
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="container">
+    <div class="slider-container">
+      <div class="slider">
+        <div class="slide">
+          <img src="images/lg-21-gn.png" alt="Slide 1">
+        </div>
+        <div class="slide">
+          <img src="images/42f318ec4d9fa05aa96c01f8f463669ea4bf2d9a.jpg" alt="Slide 2">
+        </div>
+        <div class="slide">
+          <img src="images/IMG_0125.jpg" alt="Slide 3">
+        </div>
+      </div>
+
+      <div class="slider-nav">
+        <button class="prev-btn">❮</button>
+        <button class="next-btn">❯</button>
+      </div>
+
+      <div class="slider-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </div> -->
+  <div class="container">
+    <div class="heade">
+      <h3>Sports Ground Booking</h3>
+      <p>Book your slot for cricket or football ground</p>
+    </div>
+
+    <div class="main-content">
+      <!-- Left Section - Tabs and Slots -->
+      <div class="left-section">
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="cricket"><i
+              class="fa-solid fa-baseball-bat-ball"></i>Cricket</button>
+          <button class="tab-btn" data-tab="football"><i class="fa-regular fa-futbol"></i> Football</button>
+        </div>
+
+        <div class="tab-content active" id="cricket">
+          <div class="date-selector">
+            <button class="date-btn active" data-date="today">Today</button>
+            <button class="date-btn" data-date="tomorrow">Tomorrow</button>
+            <button class="date-btn" data-date="day3">Day 3</button>
+            <button class="date-btn" data-date="day4">Day 4</button>
+            <button class="date-btn" data-date="day5">Day 5</button>
+          </div>
+
+          <div class="time-slots">
+            <div class="slot" data-time="6:00 AM - 8:00 AM" data-price="800" onclick="selectSlot(this)">
+              <div class="slot-time">6:00 AM - 8:00 AM</div>
+              <div class="slot-price">₹800/hr</div>
+              <div class="slot-availability">Available</div>
+            </div>
+
+            <div class="slot" data-time="8:00 AM - 10:00 AM" data-price="800" onclick="selectSlot(this)">
+              <div class="slot-time">8:00 AM - 10:00 AM</div>
+              <div class="slot-price">₹800/hr</div>
+              <div class="slot-availability">Available</div>
+            </div>
+
+            <div class="slot booked" data-time="10:00 AM - 12:00 PM" data-price="1000">
+              <div class="slot-time">10:00 AM - 12:00 PM</div>
+              <div class="slot-price">₹1000/hr</div>
+              <div class="slot-availability">Booked</div>
+            </div>
+
+            <div class="slot" data-time="12:00 PM - 2:00 PM" data-price="1000" onclick="selectSlot(this)">
+              <div class="slot-time">12:00 PM - 2:00 PM</div>
+              <div class="slot-price">₹1000/hr</div>
+              <div class="slot-availability">Available</div>
+            </div>
+
+            <div class="slot" data-time="2:00 PM - 4:00 PM" data-price="1200" onclick="selectSlot(this)">
+              <div class="slot-time">2:00 PM - 4:00 PM</div>
+              <div class="slot-price">₹1200/hr</div>
+              <div class="slot-availability">Available</div>
+            </div>
+
+            <div class="slot booked" data-time="4:00 PM - 6:00 PM" data-price="1500">
+              <div class="slot-time">4:00 PM - 6:00 PM</div>
+              <div class="slot-price">₹1500/hr</div>
+              <div class="slot-availability">Booked</div>
+            </div>
+
+            <div class="slot" data-time="6:00 PM - 8:00 PM" data-price="1500" onclick="selectSlot(this)">
+              <div class="slot-time">6:00 PM - 8:00 PM</div>
+              <div class="slot-price">₹1500/hr</div>
+              <div class="slot-availability">Available</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-content" id="football">
+          <div class="date-selector">
+            <button class="date-btn active" data-date="today">Today</button>
+            <button class="date-btn" data-date="tomorrow">Tomorrow</button>
+            <button class="date-btn" data-date="day3">Day 3</button>
+            <button class="date-btn" data-date="day4">Day 4</button>
+            <button class="date-btn" data-date="day5">Day 5</button>
+          </div>
+
+          <div class="time-slots">
+            <div class="slot" data-time="6:00 AM - 8:00 AM" data-price="600">
+              <div class="slot-time">6:00 AM - 8:00 AM</div>
+              <div class="slot-price">₹600/hr</div>
+              <div class="slot-availability">Available</div>
+            </div>
+            <div class="slot booked" data-time="8:00 AM - 10:00 AM" data-price="600">
+              <div class="slot-time">8:00 AM - 10:00 AM</div>
+              <div class="slot-price">₹600/hr</div>
+              <div class="slot-availability">Booked</div>
+            </div>
+            <div class="slot" data-time="10:00 AM - 12:00 PM" data-price="800">
+              <div class="slot-time">10:00 AM - 12:00 PM</div>
+              <div class="slot-price">₹800/hr</div>
+              <div class="slot-availability">Available</div>
+            </div>
+            <div class="slot" data-time="12:00 PM - 2:00 PM" data-price="800">
+              <div class="slot-time">12:00 PM - 2:00 PM</div>
+              <div class="slot-price">₹800/hr</div>
+              <div class="slot-availability">Available</div>
+            </div>
+            <div class="slot booked" data-time="2:00 PM - 4:00 PM" data-price="1000">
+              <div class="slot-time">2:00 PM - 4:00 PM</div>
+              <div class="slot-price">₹1000/hr</div>
+              <div class="slot-availability">Booked</div>
+            </div>
+            <div class="slot" data-time="4:00 PM - 6:00 PM" data-price="1200">
+              <div class="slot-time">4:00 PM - 6:00 PM</div>
+              <div class="slot-price">₹1200/hr</div>
+              <div class="slot-availability">Available</div>
+            </div>
+            <div class="slot" data-time="6:00 PM - 8:00 PM" data-price="1200">
+              <div class="slot-time">6:00 PM - 8:00 PM</div>
+              <div class="slot-price">₹1200/hr</div>
+              <div class="slot-availability">Available</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Section - Booking Summary -->
+      <div class="right-section">
+        <div class="booking-summary">
+          <h3 class="summary-title">📋 Booking Summary</h3>
+          <div class="summary-details">
+            <div class="summary-item">
+              <span>Sport:</span>
+              <span id="summary-sport">Cricket</span>
+            </div>
+            <div class="summary-item">
+              <span>Date:</span>
+              <span id="summary-date">Today</span>
+            </div>
+            <div class="summary-item">
+              <span>Time Slot:</span>
+              <span id="summary-time">Not selected</span>
+            </div>
+            <div class="summary-item">
+              <span>Duration:</span>
+              <span id="summary-duration">2 hours</span>
+            </div>
+            <div class="summary-item">
+              <span>Price:</span>
+              <span id="summary-price">₹0</span>
+            </div>
+          </div>
+          <button class="book-btn" disabled>Book Now</button>
+          <div class="success-message">
+            ✅ Booking confirmed! Your slot has been reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="header1">
+      <h2><i class="fas fa-info-circle"></i> Venue Details</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <div class="title-icon">
+          <i class="fas fa-align-left"></i>
+        </div>
+        <h3>DESCRIPTION</h3>
+      </div>
+      <div class="description-text">
+        <p>Now plan your games along with shopping trips! Book Alwar first turf Inside a mall. The best quality turf
+          with a very good height for you to enjoy 3 different sports all in one. Come and enjoy anytime!</p>
+      </div>
+      <ul class="features-list">
+        <li><span class="feature-icon"><i class="fas fa-tv"></i></span> A pavillion is also there for spectators to
+          watch and capture highlights on a big screen.</li>
+        <li><span class="feature-icon"><i class="fas fa-birthday-cake"></i></span> Enjoy Your Child's Precious Birthday
+          Parties in a Sporty Way With Us.</li>
+        <li><span class="feature-icon"><i class="fas fa-coffee"></i></span> Soft And Energy Drinks Available.</li>
+        <li><span class="feature-icon"><i class="fas fa-shield-alt"></i></span> CCTV Along With Security Maintained
+          Facility.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <div class="title-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <h3>HIGHLIGHTS</h3>
+      </div>
+      <div class="highlights-grid">
+        <div class="highlight-item">
+          <div class="highlight-icon" style="background-color: #e8f1df;">
+            <i class="fas fa-seedling" style="color: #699028;"></i>
+          </div>
+          <span>Artificial Turf</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon" style="background-color: #e8f1df;">
+            <i class="fas fa-user-friends" style="color: #699028;"></i>
+          </div>
+          <span>Ball Boy</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon" style="background-color: #e8f1df;">
+            <i class="fas fa-coffee" style="color: #699028;"></i>
+          </div>
+          <span>Cafe</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon" style="background-color: #e8f1df;">
+            <i class="fas fa-tint" style="color: #699028;"></i>
+          </div>
+          <span>Drinking Water</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon" style="background-color: #e8f1df;">
+            <i class="fas fa-lightbulb" style="color: #699028;"></i>
+          </div>
+          <span>Flood Lights</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon" style="background-color: #e8f1df;">
+            <i class="fas fa-lock" style="color: #699028;"></i>
+          </div>
+          <span>Locker Room</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon" style="background-color: #e8f1df;">
+            <i class="fas fa-parking" style="color: #699028;"></i>
+          </div>
+          <span>Parking</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon" style="background-color: #e8f1df;">
+            <i class="fas fa-tools" style="color: #699028;"></i>
+          </div>
+          <span>Rental Equipment</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon" style="background-color: #e8f1df;">
+            <i class="fas fa-chair" style="color: #699028;"></i>
+          </div>
+          <span>Seating Area</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon" style="background-color: #e8f1df;">
+            <i class="fas fa-volume-up" style="color: #699028;"></i>
+          </div>
+          <span>Sound System</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon" style="background-color: #e8f1df;">
+            <i class="fas fa-dumbbell" style="color: #699028;"></i>
+          </div>
+          <span>Warm Up Area</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon" style="background-color: #e8f1df;">
+            <i class="fas fa-restroom" style="color: #699028;"></i>
+          </div>
+          <span>Washroom</span>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon" style="background-color: #e8f1df;">
+            <i class="fas fa-wifi" style="color: #699028;"></i>
+          </div>
+          <span>Wi-Fi</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="section cancellation-section">
+      <div class="section-title">
+        <div class="title-icon">
+          <i class="fas fa-user-times"></i>
+        </div>
+        <h3>CANCELLATION POLICY</h3>
+      </div>
+      <div class="description-text">
+        <p>Cancellation of Bookings is allowed as per the cancellation policy.</p>
+      </div>
+      <a href="#" class="cancellation-link">
+        View Full Policy <i class="fas fa-chevron-right"></i>
+      </a>
+    </div> -->
+  </div>
+  <div class="container">
+    <div class="section-header">
+      <h3>Gallery</h3>
+    </div>
+    <div class="gallery-container">
+      <!-- Gallery Item 1 -->
+      <div class="gallery-item" onclick="openFullscreen('images/unnamed (1).jpg', 0)">
+        <img src="images/unnamed (1).jpg" alt="Sports Event">
+        <div class="image-hover-effect"></div>
+      </div>
+
+      <!-- Gallery Item 2 -->
+      <div class="gallery-item" onclick="openFullscreen('images/unnamed (2).jpg', 1)">
+        <img src="images/unnamed (2).jpg" alt="Sports Event">
+        <div class="image-hover-effect"></div>
+      </div>
+
+      <!-- Gallery Item 3 -->
+      <div class="gallery-item" onclick="openFullscreen('images/unnamed.jpg', 2)">
+        <img src="images/unnamed.jpg" alt="Sports Event">
+        <div class="image-hover-effect"></div>
+      </div>
+
+      <!-- Gallery Item 4 -->
+      <div class="gallery-item" onclick="openFullscreen('images/school1 (1).jpeg', 3)">
+        <img src="images/school1 (1).jpeg" alt="Sports Event">
+        <div class="image-hover-effect"></div>
+      </div>
+
+      <!-- Gallery Item 5 -->
+      <div class="gallery-item" onclick="openFullscreen('images/school1 (2).jpeg', 4)">
+        <img src="images/school1 (2).jpeg" alt="Sports Event">
+        <div class="image-hover-effect"></div>
+      </div>
+
+      <!-- Gallery Item 6 -->
+      <div class="gallery-item" onclick="openFullscreen('images/school1 (3).jpeg', 5)">
+        <img src="images/school1 (3).jpeg" alt="Sports Event">
+        <div class="image-hover-effect"></div>
+      </div>
+    </div>
+  </div>
+  <div id="fullscreenModal" class="custom-modal" onclick="handleModalClick(event)">
+    <span class="modal-close" onclick="closeFullscreen()">&times;</span>
+    <span class="modal-arrow prev" onclick="changeImage(-1, event)">❮</span>
+    <img class="modal-image" id="fullscreenImage">
+    <span class="modal-arrow next" onclick="changeImage(1, event)">❯</span>
+  </div>
+  <footer>
+    <ul>
+      <li><a href="#">PRIVACY POLICY</a></li>
+      <li><a href="#">TERMS & CONDITIONS</a></li>
+      <li><a href="#">CANCELLATION & REFUND</a></li>
+      <li><a href="#">CONTACT US</a></li>
+      <li><a href="#">SHIPPING & DELIVERY</a></li>
+    </ul>
+  </footer>
+
+  <!------------------------- javascript ------------------------------>
+  <script>
+    // State management
+    let currentSport = 'cricket';
+    let currentDate = 'today';
+    let selectedSlot = null;
+
+    // Initialize the app
+    document.addEventListener('DOMContentLoaded', function () {
+      initializeEventListeners();
+    });
+
+    function initializeEventListeners() {
+      // Tab switching
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+          switchSport(this.dataset.tab);
+        });
+      });
+
+      // Date selection
+      document.querySelectorAll('.date-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+          selectDate(this.dataset.date, this);
+        });
+      });
+
+      // Slot selection
+      document.querySelectorAll('.slot').forEach(slot => {
+        if (!slot.classList.contains('booked')) {
+          slot.addEventListener('click', function () {
+            selectSlot(this);
+          });
+        }
+      });
+
+      // Book button
+      document.querySelector('.book-btn').addEventListener('click', function () {
+        if (!this.disabled) {
+          bookSlot();
+        }
+      });
+    }
+
+    function switchSport(sport) {
+      currentSport = sport;
+
+      // Update tab buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.querySelector(`[data-tab="${sport}"]`).classList.add('active');
+
+      // Update tab content
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+      });
+      document.getElementById(sport).classList.add('active');
+
+      // Reset selections
+      selectedSlot = null;
+      updateBookingSummary();
+
+      // Re-initialize event listeners for new content
+      initializeSlotListeners();
+      initializeDateListeners();
+    }
+
+    function selectDate(date, element) {
+      currentDate = date;
+
+      // Update active date button within current sport
+      const activeContent = document.querySelector('.tab-content.active');
+      activeContent.querySelectorAll('.date-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      element.classList.add('active');
+
+      // Reset slot selection
+      selectedSlot = null;
+      updateBookingSummary();
+    }
+
+    function selectSlot(slotElement) {
+      // Remove previous selection
+      document.querySelectorAll('.slot').forEach(slot => {
+        slot.classList.remove('selected');
+      });
+
+      // Add selection to clicked slot
+      slotElement.classList.add('selected');
+
+      selectedSlot = {
+        time: slotElement.dataset.time,
+        price: parseInt(slotElement.dataset.price)
+      };
+
+      updateBookingSummary();
+    }
+
+    function updateBookingSummary() {
+      document.getElementById('summary-sport').textContent =
+        currentSport.charAt(0).toUpperCase() + currentSport.slice(1);
+
+      document.getElementById('summary-date').textContent =
+        formatDate(currentDate);
+
+      if (selectedSlot) {
+        document.getElementById('summary-time').textContent = selectedSlot.time;
+        document.getElementById('summary-price').textContent = `₹${selectedSlot.price * 2}`;
+        document.querySelector('.book-btn').disabled = false;
+      } else {
+        document.getElementById('summary-time').textContent = 'Not selected';
+        document.getElementById('summary-price').textContent = '₹0';
+        document.querySelector('.book-btn').disabled = true;
+      }
+    }
+
+    function formatDate(date) {
+      const dateMap = {
+        'today': 'Today',
+        'tomorrow': 'Tomorrow',
+        'day3': getDateString(2),
+        'day4': getDateString(3),
+        'day5': getDateString(4)
+      };
+      return dateMap[date] || date;
+    }
+
+    function getDateString(daysFromNow) {
+      const date = new Date();
+      date.setDate(date.getDate() + daysFromNow);
+      return date.toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric'
+      });
+    }
+
+    function bookSlot() {
+      // Simulate booking process
+      const bookBtn = document.querySelector('.book-btn');
+      const successMessage = document.querySelector('.success-message');
+
+      bookBtn.textContent = 'Booking...';
+      bookBtn.disabled = true;
+
+      setTimeout(() => {
+        // Mark slot as booked
+        const selectedSlotElement = document.querySelector('.slot.selected');
+        if (selectedSlotElement) {
+          selectedSlotElement.classList.remove('selected');
+          selectedSlotElement.classList.add('booked');
+          selectedSlotElement.querySelector('.slot-availability').textContent = 'Booked';
+          selectedSlotElement.style.cursor = 'not-allowed';
+          selectedSlotElement.removeEventListener('click', function () { });
+        }
+
+        // Show success message
+        successMessage.style.display = 'block';
+
+        // Reset form
+        selectedSlot = null;
+        updateBookingSummary();
+        bookBtn.textContent = 'Book Now';
+
+        // Hide success message after 3 seconds
+        setTimeout(() => {
+          successMessage.style.display = 'none';
+        }, 3000);
+
+      }, 1500);
+    }
+
+    function initializeSlotListeners() {
+      const activeContent = document.querySelector('.tab-content.active');
+      activeContent.querySelectorAll('.slot').forEach(slot => {
+        if (!slot.classList.contains('booked')) {
+          slot.addEventListener('click', function () {
+            selectSlot(this);
+          });
+        }
+      });
+    }
+
+    function initializeDateListeners() {
+      const activeContent = document.querySelector('.tab-content.active');
+      activeContent.querySelectorAll('.date-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+          selectDate(this.dataset.date, this);
+        });
+      });
+    }
+  </script>
+  <script>
+    let currentImageIndex = 0;
+    const galleryImages = [
+      'images/unnamed (1).jpg',
+      'images/unnamed (2).jpg',
+      'images/unnamed.jpg',
+      'images/school1 (1).jpeg',
+      'images/school1 (2).jpeg',
+      'images/school1 (3).jpeg'
+    ];
+
+    function openFullscreen(src, index) {
+      currentImageIndex = index;
+      document.getElementById('fullscreenImage').src = src;
+      document.getElementById('fullscreenModal').style.display = "block";
+    }
+
+    function closeFullscreen() {
+      document.getElementById('fullscreenModal').style.display = "none";
+    }
+
+    function handleModalClick(event) {
+      if (event.target === document.getElementById('fullscreenModal')) {
+        closeFullscreen();
+      }
+    }
+
+    function changeImage(step, event) {
+      event.stopPropagation();
+      currentImageIndex = (currentImageIndex + step + galleryImages.length) % galleryImages.length;
+      document.getElementById('fullscreenImage').src = galleryImages[currentImageIndex];
+    }
+
+    // कीबोर्ड नेविगेशन
+    document.addEventListener('keydown', function (e) {
+      const modal = document.getElementById('fullscreenModal');
+      if (modal.style.display === "block") {
+        if (e.key === "Escape") closeFullscreen();
+        if (e.key === "ArrowLeft") changeImage(-1, { stopPropagation: () => { } });
+        if (e.key === "ArrowRight") changeImage(1, { stopPropagation: () => { } });
+      }
+    });
+  </script>
+
+
+</body>
+
+</html>
